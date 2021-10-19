@@ -9,14 +9,20 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private var contacts = [ContactProtcol]()
+    @IBOutlet var tableView: UITableView!
+    
+    private var contacts: [ContactProtcol] = [] {
+        // Добавляем наблюдатель к свойству, чтобы при введении новых контактов они располагались в алфавитном порядке
+        didSet {
+            contacts.sort { $0.title < $1.title}
+        }
+    }
     
     // Приватный метод наполняющий свойство тестовыми данными
     private func loadContacts() {
         contacts.append(Contact(title: "Саня техосмотр", phone: "+799912312323"))
         contacts.append(Contact(title: "Владимир Анатольевич", phone: "+781213342321"))
         contacts.append(Contact(title: "Сильвестр", phone: "+7000911112"))
-        contacts.sort { $0.title < $1.title }
     }
     
     override func viewDidLoad() {
@@ -24,9 +30,41 @@ class ViewController: UIViewController {
         loadContacts()
     }
     
+    // Экшн для появления алерта и добавления контактов
+    @IBAction func showNewContactAlert() {
+        // Создание алерт контроллера
+        let alertController = UIAlertController(title: "Создайте новый контакт", message: "Введите имя и телефон", preferredStyle: .alert)
+        // Добавляем первое текстовое поле в алерт контроллер
+        alertController.addTextField { textField in
+            textField.placeholder = "Имя"
+        }
+        // Добавляем второе текстовое поле в алерт контроллер
+        alertController.addTextField { textField in
+            textField.placeholder = "Номер телефона"
+        }
+        // Создаем кнопки
+        // Кнопка создания контакта
+        let createButton = UIAlertAction(title: "Создать", style: .default) { _ in
+            guard let contactName = alertController.textFields?[0].text, let contactPhone = alertController.textFields?[1].text else {
+                      return
+                  }
+            // создаем новый контакт
+            let contact = Contact(title: contactName, phone: contactPhone)
+            self.contacts.append(contact)
+            self.tableView.reloadData()
+        }
+        // Кнопка отмены
+        let cancelButton = UIAlertAction(title: "Отменить", style: .cancel, handler: nil)
+        // Добавлям кнопки в alertController
+        alertController.addAction(cancelButton)
+        alertController.addAction(createButton)
+        // Отображаем alertController
+        self.present(alertController, animated: true, completion: nil)
+    }
     
 }
 
+// Расширение для добавления строк, ячеек, и базы данных для этих ячеек
 extension ViewController: UITableViewDataSource {
     
     private func configure(cell: inout UITableViewCell, for indexPath: IndexPath) {
@@ -65,6 +103,7 @@ extension ViewController: UITableViewDataSource {
     
 }
 
+// Расширение для возможности добавления действий строки по свайпу
 extension ViewController: UITableViewDelegate {
     // Метод определяет действия по свайпу влево для конкретной строки
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
