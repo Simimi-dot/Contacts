@@ -21,6 +21,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="5uc-Zi-nvJ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="nj0-bL-ZPt"/>
                                 </connections>
                             </tableView>
                         </subviews>
