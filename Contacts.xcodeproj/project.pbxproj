@@ -14,6 +14,9 @@
 		06385E28271DF23600A72226 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06385E27271DF23600A72226 /* Assets.xcassets */; };
 		06385E2B271DF23600A72226 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06385E29271DF23600A72226 /* LaunchScreen.storyboard */; };
 		06F2E354271ED4360059E3FA /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F2E353271ED4360059E3FA /* Contact.swift */; };
+		06F2E359271F40900059E3FA /* Screenshot03.png in Resources */ = {isa = PBXBuildFile; fileRef = 06F2E356271F408F0059E3FA /* Screenshot03.png */; };
+		06F2E35A271F40900059E3FA /* Screenshot01.png in Resources */ = {isa = PBXBuildFile; fileRef = 06F2E357271F408F0059E3FA /* Screenshot01.png */; };
+		06F2E35B271F40900059E3FA /* Screenshot02.png in Resources */ = {isa = PBXBuildFile; fileRef = 06F2E358271F40900059E3FA /* Screenshot02.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		06385E2A271DF23600A72226 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06385E2C271DF23600A72226 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06F2E353271ED4360059E3FA /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		06F2E356271F408F0059E3FA /* Screenshot03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot03.png; sourceTree = "<group>"; };
+		06F2E357271F408F0059E3FA /* Screenshot01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot01.png; sourceTree = "<group>"; };
+		06F2E358271F40900059E3FA /* Screenshot02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot02.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		06385E1D271DF23200A72226 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				06F2E355271F3F810059E3FA /* Screenshots */,
 				06F2E352271ED4160059E3FA /* Model */,
 				06385E1E271DF23200A72226 /* AppDelegate.swift */,
 				06385E20271DF23200A72226 /* SceneDelegate.swift */,
@@ -76,6 +83,16 @@
 				06F2E353271ED4360059E3FA /* Contact.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		06F2E355271F3F810059E3FA /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				06F2E357271F408F0059E3FA /* Screenshot01.png */,
+				06F2E358271F40900059E3FA /* Screenshot02.png */,
+				06F2E356271F408F0059E3FA /* Screenshot03.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,9 +153,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06F2E359271F40900059E3FA /* Screenshot03.png in Resources */,
 				06385E2B271DF23600A72226 /* LaunchScreen.storyboard in Resources */,
 				06385E28271DF23600A72226 /* Assets.xcassets in Resources */,
+				06F2E35A271F40900059E3FA /* Screenshot01.png in Resources */,
 				06385E26271DF23200A72226 /* Main.storyboard in Resources */,
+				06F2E35B271F40900059E3FA /* Screenshot02.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
